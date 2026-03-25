@@ -1,0 +1,182 @@
+07696645986Ad
+
+netstat -aon | findstr :80 *** Pesquisar pela porta 80
+
+netstat -aon *** listar portas
+
+tasklist /fi "pid eq 4896" *** pesquisar por uma porta específica
+
+findstr /C:"Listen C:\EasyPHP\eds-binaries\httpserver\apache2425vc11x86x260214210447\conf\httpd.conf" *** pesquisar pelo
+
+arquivo "httpd.conf" por caminho do diretório local
+
+diskpart "acesso ao utilitário"
+
+list disk *** para ver os discos conectados
+
+select disk X *** substitua X pelo número do seu HD/SSD ex. (0, 1, 2, 3..)
+
+list volume *** para ver as partições
+
+select volume *** Y onde Y é a partição que você quer diminuir
+
+create partition primary
+
+Dica: Você pode limitar o tamanho adicionando *** size=20480
+
+Formatar	"format fs=ntfs quick"
+Atribuir Letra	"assign letter=D"
+
+dism /online /Enable-Feature /FeatureName:TelnetClient *** Verificar se o Telnet está ativo *
+
+telnet [IP_DO_ROTEADOR] 23 *** Teste a conexão via CMD
+
+netsh advfirewall set allprofiles state off *** Desativar Firewall Local
+
+netstat -an | findstr :23 *** Comando de teste, para ver se o serviço está desligado.
+
+nmap -sT -p 23 [IP_ALVO] *** scan de conexão completa
+
+wmic csproduct get vendor, name, identifyingnumber *** Para ver Marca, Modelo e Número de Série
+
+wmic computersystem get manufacturer *** Para ver apenas o Fabricante (Marca)
+
+wmic computersystem get model *** Para ver apenas o Modelo
+
+Get-PhysicalDisk | Format-Table *** específica chamada "MediaType" no PowerShell
+
+[para verifica se o seu diskhard é um SSD ou HD] --
+
+Windows + R 
+
+Digite powershell e pressione Enter
+
+pressione Ctrl + Shift + Enter para abrir diretamente com privilégios elevados
+
+Get-CimInstance Win32_PhysicalMemory | Select-Object @{Name="Tamanho_GB"; Expression={$_.Capacity / 1GB}}
+
+[Este comando já identifica o valor em bytes e utiliza a constante interna 1GB do 
+PowerShell para exibir o resultado final.]
+
+wmic memorychip get devicelocator, manufacturer, partnumber, speed, capacity *** Ver Resumo Completo 
+(Fabricante, Modelo, Velocidade e Tamanho)
+
+mdsched.exe *** Diagnóstico
+ de memória do Windows
+
+1. Atalhos de Teclado
+Configurações Gerais: Pressione Tecla Windows + I.
+
+Menu de Links Rápidos: Pressione Tecla Windows + X.
+
+-------------------CMD----------------------
+Status da Rede: start ms-settings:network
+
+Wi-Fi: start ms-settings:network-wifi
+
+Ethernet: start ms-settings:network-ethernet
+
+VPN: start ms-settings:network-vpn
+
+Uso de Dados: start ms-settings:network-datausage
+*------------------------------------------*
+
+ms-settings:network *** Pelo comando "Executar" Windows + R configurações de rede >> "Rede e Internet"
+
+ncpa.cpl *** Pelo comando "Executar" Windows + R (Janela de Conexões de Rede)
+
+netsh interface ip show config *** Identifica a Configuração para as interface... [Ethernet, Wi-Fi..]
+
+netsh interface ip set dns name="Nome da Rede" source=static address=8.8.8.8 *** alterar servidor DNS
+
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' *** powershellVerificar se está instalado
+
+Get-Service sshd *** Ainda no PowerShell Verificar se o serviço está rodando
+
+Para iniciá-lo, use: Start-Service sshd
+
+2. Via PowerShell (Script para lista de PCs)
+$computadores = Get-Content "C:\caminho\para\pcs.txt"
+
+Invoke-Command -ComputerName $computadores -ScriptBlock {
+    Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
+}
+
+ curl ifconfig.me 
+ curl icanhazip.com  
+ curl ipinfo.io/ip 
+
+*** visualizar seu endereço IP externo (público)
+
+netsh wlan show interfaces *** Para ver a rede Wi-Fi conectada no momento
+
+netsh wlan show profile name="NOME_DA_REDE" key=clear *** Ver a senha de uma rede específica
+
+netsh wlan set hostednetwork mode=allow ssid=NOME key=SENHA *** Comando para Iniciar a Rede
+
+netsh wlan start hostednetwork *** iniciar
+
+notepad "%userprofile%\Desktop\Novo Documento de Texto.txt" *** abrir um documento de texto que está na sua Área de Trabalho
+
+cd desktop *** caminho padrão da Área de Trabalho no Windows
+
+arquivo.txt + Enter *** abrir um documento de texto que esta na area de trabalho via (Estando dentro de cd desktop)
+
+shutdown /r /f /t 0 *** /f: Força (force) o encerramento de todos os aplicativos
+
+echo "# novasprojeto" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/adazeze/novasprojeto.git
+git push -u origin main
+
+fsutil fsinfo ntfsinfo C: *** Visualizar Estatísticas da MFT (Nativo)
+Você precisará de privilégios de Administrador
+
+Este comando exibirá detalhes como o início do cluster da MFT, o início do espelhamento e o tamanho total
+--
+winfr C: E: /regular /n \Users\<username>\Documents\ *** Recuperação de Arquivos >> Windows File Recovery (Necessário ativar)
+
+utiliza as informações da tabela para localizar e restaurar arquivos deletados
+--
+https://apps.microsoft.com/detail/9n0dx20hk701?hl=pt-BR&gl=BR *** Windows Terminal
+
+wsl --install *** Para instalar o Linux no Windows via WSL (Windows Subsystem for Linux)
+
+wsl --list --online *** 
+
+winget install Microsoft.Edit *** Para instalar o Microsoft Edit
+
+ Serviços Públicos com Filtro:
+
+Cloudflare (1.1.1.2 / 1.1.1.3): Bloqueia malwares e conteúdo adulto gratuitamente.
+
+AdGuard DNS: Focado em bloquear anúncios, rastreadores e conteúdo adulto.
+
+OpenDNS (Cisco Umbrella): Oferece proteção contra phishing e filtros customizáveis para redes domésticas e empresas.
+
+CleanBrowsing: Muito utilizado em escolas para controle parental rigoroso.
+
+ms-settings:network *** Windows + R (Executar)
+
+mdsched.exe *** Windows + R (Executar)
+
+wf.msc *** Windows + R (Executar)
+
+optionalfeatures *** Windows + R (Executar)
+
+appwiz.cpl *** Windows + R (Executar)
+
+services.msc *** Windows + R (Executar)
+
+
+
+
+
+
+
+
+
+
