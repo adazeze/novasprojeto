@@ -1,0 +1,48 @@
+Restart-Service -Name WlanSvc -Force *** reiniciar o serviço de rede sem fio (Wireless)
+
+Get-NetAdapter -Name "Wi-Fi" | Restart-NetAdapter *** Reiniciar o Adaptador de Rede (Hardware)
+
+Get-Service -Name WlanSvc *** Verificar o Status do Serviço
+
+netsh winsock reset *** Reset de Rede Completo
+ipconfig /flushdns *** reseta apilha de protocolos TCP/IP e o cache DNS
+
+wmic cpu get name *** Ver apenas o Nome e Modelo (ex: Intel Core i7 ou AMD Ryzen 5)
+
+systeminfo *** Visão Geral do Sistema
+
+echo %PROCESSOR_ARCHITECTURE% *** Verificar Arquitetura
+
+Get-CimInstance -ClassName Win32_BaseBoard | Select-Object Manufacturer, Product, SerialNumber, Version *** Para saber se a sua placa-mãe está exportando dados para o Windows Management Instrumentation (WMI)
+
+shell:startup *** pasta de inicialização
+
+wmic /namespace:\\root\wmi PATH MSAcpi_ThermalZoneTemperature get CurrentTemperature *** Verificar a Temperatura (WMIC)
+
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 Name, CPU *** Ver uso por processo
+
+winver ***  verificar a versão do kernel [número da "Compilação do SO" (Build)]
+
+ver *** Exibe a versão do Windows e o número da compilação, Ex.. Microsoft Windows [versão 10.0.19045.6456]
+
+sfc /scannow *** Isso verifica e repara arquivos corrompidos que afetam o kernel.
+
+compmgmt.msc *** Gerenciamento do Computador
+
+Get-CimInstance -ClassName Win32_BaseBoard | Select-Object Manufacturer, Product, SerialNumber, Version *** Placa-mãe
+
+  [Comandos no console de recuperação]
+
+chkdsk /f *** Corrige erros no disco
+
+bootrec /rebuildbcd *** : Reconstrói os dados de configuração da inicialização
+
+winget install Microsoft.Sysinternals.Whois *** instalação whois via cmd no windows
+
+5357 : porta usada para detectar dispositivos (como scanners e TVs) na rede
+
+
+
+
+
+
