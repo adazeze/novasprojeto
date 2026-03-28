@@ -171,6 +171,14 @@ appwiz.cpl *** Windows + R (Executar)
 
 services.msc *** Windows + R (Executar)
 
+dir /a *** (mostra todos os arquivos)
+
+dir *.cms /a *** (filtra apenas arquivos .cms, incluindo os ocultos)
+
+assoc .bat=batfile *** restaura a associação de arquivos .bat
+
+set_PATHEXT *** VERIFICA se as quais extensões estão aparecendo nas varáveis de ambiente
+
 
 
 
