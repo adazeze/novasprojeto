@@ -179,6 +179,8 @@ assoc .bat=batfile *** restaura a associação de arquivos .bat
 
 set_PATHEXT *** VERIFICA se as quais extensões estão aparecendo nas varáveis de ambiente
 
+taskschd.msc *** Abre o Gerenciador de Tarefas 
+
 
 
 
